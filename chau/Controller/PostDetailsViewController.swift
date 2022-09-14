@@ -61,8 +61,8 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         postUserId.isHidden = true
         
-        selectedPostDetails()
         postProfileDetails()
+        selectedPostDetails()
         
         
         
@@ -82,18 +82,23 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         DateAndTime.dateValue = "\(date)\(time)"
         
+        
         retriveComments()
         self.commentsTableView.reloadData()
 
         
        
     }
+    struct DateAndTime {
+        
+        static var dateValue = ""
+    }
+    
     
     @IBAction func commentButtonTapped(_ sender: Any) {
         
         postProfileDetails()
         addComment()
-        commandInput.text = ""
 
     }
     
@@ -229,35 +234,32 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     func postProfileDetails() {
         let DatabaseRef = Database.database().reference()
         
-        DatabaseRef.child("User").child(postUserId.text!).child("userDetails").observe(.value) { snapshot   in
-            
-            if let dictionary = snapshot.value as? [String : Any] {
-                
-                
-                let userProfilePicture = dictionary["url"] as! String
-                
-                
-                
-                let storageRef = Storage.storage().reference()
-                let fileRef = storageRef.child(userProfilePicture)
-                fileRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
-                    if error == nil && data != nil {
-                        
-                        let image = UIImage(data: data!)
-                        
-                        self.postUserImage.image = image
-                        
-                        
-                        
-                    }
-                }
-            }
-        }
+//        DatabaseRef.child("User").child(self.postUserId.text!).child("userDetails").observe(.value) { snapshot   in
+//            
+//            if let dictionary = snapshot.value as? [String : Any] {
+//                
+//                
+//                let userProfilePicture = dictionary["url"] as! String
+//                
+//                
+//                let storageRef = Storage.storage().reference()
+//                let fileRef = storageRef.child(userProfilePicture)
+//                fileRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
+//                    if error == nil && data != nil {
+//                        
+//                        let image = UIImage(data: data!)
+//                        
+//                        self.postUserImage.image = image
+//                        
+//                        
+//                        
+//                    }
+//                }
+//            }
+//        }
     }
     
-    struct DateAndTime {
-        static var dateValue = ""
-    }
+   
     
     func retriveComments() {
         let fireStoreDatabase = Firestore.firestore()

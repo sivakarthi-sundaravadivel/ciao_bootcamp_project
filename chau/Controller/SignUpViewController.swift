@@ -66,7 +66,7 @@ class SignUpViewController: UIViewController {
     }
     
     func userCreated() {
-        let alert = UIAlertController(title: "Success", message: "User has been Created", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Success", message: "ciao! User has been Created", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default) { (action) -> Void in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "userDetailsUi")

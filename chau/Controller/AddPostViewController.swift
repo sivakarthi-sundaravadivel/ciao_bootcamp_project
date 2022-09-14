@@ -60,7 +60,10 @@ class AddPostViewController: UIViewController, UINavigationControllerDelegate {
        
     }
     
-  
+    @IBAction func backbuttonTapped(_ sender: Any) {
+        backHome()
+    }
+    
     
     @IBAction func posttry(_ sender: Any) {
         
