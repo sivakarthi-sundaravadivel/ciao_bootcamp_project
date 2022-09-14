@@ -177,6 +177,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Password Reset" id="SJA-oP-ayP"/>
                     <connections>
+                        <outlet property="emailInput" destination="azT-aF-2k9" id="34Z-vD-wzh"/>
                         <outlet property="uiExpressionImagePasswordRest" destination="vpJ-lQ-hVq" id="8RK-xi-B2v"/>
                     </connections>
                 </viewController>
