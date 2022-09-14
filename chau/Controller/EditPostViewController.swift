@@ -115,13 +115,37 @@ class EditPostViewController: UIViewController {
             
         }
     }
+    func backToProfile() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "homeUi")
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true)
+    }
+    
+    func postDeletedAlert() {
+        let alert = UIAlertController(title: "successful", message: "your post has been deleted", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Done", style: UIAlertAction.Style.cancel, handler: {(action:UIAlertAction!) in
+            self.backToProfile()
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func postEditedAlert() {
+        let alert = UIAlertController(title: "successful", message: "your post has been edited", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Done", style: UIAlertAction.Style.cancel, handler: {(action:UIAlertAction!) in
+            self.backToProfile()
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     @IBAction func deleteButtonTapped(_ sender: Any) {
         deletePost()
+        postDeletedAlert()
     }
     
     @IBAction func editButtonTapped(_ sender: Any) {
         editPost()
+        postEditedAlert()
         
     }
     

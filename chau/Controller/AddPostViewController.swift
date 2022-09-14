@@ -60,12 +60,7 @@ class AddPostViewController: UIViewController, UINavigationControllerDelegate {
        
     }
     
-    @IBAction func backButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "homeUi")
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: true)
-    }
+  
     
     @IBAction func posttry(_ sender: Any) {
         

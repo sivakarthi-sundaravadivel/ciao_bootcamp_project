@@ -29,15 +29,28 @@ class SettingViewController: UIViewController {
     @IBAction func logutButtonTapped(_ sender: Any) {
         do{
             try Auth.auth().signOut()
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "signInNavigationUi")
-            vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true)
+            userSignOutAlert()
+            
 
         }
         catch{
             print("Unexpected Error")
         }
+    }
+    
+    func backToSignin() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "signInNavigationUi")
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true)
+    }
+    
+    func userSignOutAlert() {
+        let alert = UIAlertController(title: "Thank you", message: "See you soon, ciao!!!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.cancel, handler: {(action:UIAlertAction!) in
+            self.backToSignin()
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation

@@ -319,8 +319,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nff-va-JKU">
-                                <rect key="frame" x="217.5" y="93.5" width="41.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nff-va-JKU">
+                                <rect key="frame" x="259" y="114" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -944,7 +944,7 @@
                     <tabBarItem key="tabBarItem" title="newsfeed" image="home" id="qft-zg-VRP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hnh-bo-5Ml">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -978,7 +978,7 @@
         <!--Navigation Controller-->
         <scene sceneID="6qn-eY-NSY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IJI-gw-cWv" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="userProfileUi" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IJI-gw-cWv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="LTk-GU-6BF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NjT-Hg-jWr">
