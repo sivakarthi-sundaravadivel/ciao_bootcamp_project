@@ -119,7 +119,7 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
                     print("Error occord")
                 }
                 else {
-                    let db = Firestore.firestore()
+                    _ = Firestore.firestore()
                     
                     let DatabaseRef = Database.database().reference()
                     

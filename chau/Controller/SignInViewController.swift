@@ -64,15 +64,15 @@ class SignInViewController: UIViewController {
     //user auth initation
     func signIn() {
         Auth.auth().signIn(withEmail: emailInput.text!, password: passwordInput.text!) { [weak self] authResult, error in
-            
+
             if error != nil {
-                UIView.transition(with: (self!.siginInExpression)!, duration: 0.5, options: .transitionCrossDissolve, animations: {
-                    self!.siginInExpression.image = UIImage(imageLiteralResourceName: "signInIncorrectPassword")
-                        }, completion: nil)
+                let alert = UIAlertController(title: "failed", message: "invalid username or password", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.cancel, handler: nil))
+                self!.present(alert, animated: true, completion: nil)
             }
-           
+
             self?.checkUser()
-            
+
         }
     }
     

@@ -100,10 +100,7 @@ class AddPostViewController: UIViewController, UINavigationControllerDelegate {
     {
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(Handler) in
-            self.cameraImage()
-
-        }))
+        
         alert.addAction(UIAlertAction(title: "Phone", style: .default, handler: {(Handler) in
             self.phoneImage()
                                                                                    
@@ -117,14 +114,7 @@ class AddPostViewController: UIViewController, UINavigationControllerDelegate {
     
     //Capture user profile picture from camera
     func cameraImage() {
-        
-//        if UIImagePickerController.isSourceTypeAvailable(.camera){
-//            let image = UIImagePickerController()
-//            image.allowsEditing = true
-//            image.sourceType = .camera
-//            image.mediaTypes = [kUTTypeImage as String]
-//            self.present(image, animated: true, completion: nil)
-//        }
+
     }
     
     //Import user profile picture from phone
@@ -135,8 +125,7 @@ class AddPostViewController: UIViewController, UINavigationControllerDelegate {
             image.allowsEditing = true
             image.delegate = self
             self.present(image, animated: true, completion: nil )
-            //check
-            print(userID)
+            
 
         }
     }
